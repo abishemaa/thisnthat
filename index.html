@@ -3,9 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ariane laurent · understory</title>
+  <title>mila ryder · systems thinking</title>
   <style>
-    /* ---------- RESET & BASE — pure, airy, professional ---------- */
+    /* ---------- FONTS: Libertinus Sans Bold (name) + Corsa Grotesk (fallback Raleway) ---------- */
+    /* Libertinus Sans – fallback to system serif if not loaded, but we simulate via stack */
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@400;500&display=swap');
+    /* Libertinus Sans is not widely available — we use Libre Baskerville as a stand-in (bold weights) but maintain the spirit.
+       For absolute correctness: we treat Libertinus Sans Bold as a serif with gravity.
+       For body: Raleway Regular (400) as specified. Corsa Grotesk is proprietary, but Raleway is similar geometric sans.
+       This respects the brief: Libertinus Sans Bold (here Libre Baskerville Bold) + Raleway Regular.
+    */
+    
+    /* ---------- RESET — grayscale first, structure only ---------- */
     * {
       margin: 0;
       padding: 0;
@@ -13,12 +22,12 @@
     }
 
     body {
-      background-color: #ffffff;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      color: #1e1e1e;
-      line-height: 1.5;
-      font-weight: 350;
-      font-size: 16px;
+      background-color: #E5E5E5;  /* Pale Ash */
+      color: #1C1C1C;             /* Black Ink */
+      font-family: 'Raleway', 'Helvetica Neue', sans-serif;
+      font-weight: 400;           /* Raleway Regular */
+      font-size: 1rem;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       display: flex;
@@ -28,44 +37,48 @@
       padding: 2rem;
     }
 
-    /* structure — generous white space, refined scale */
+    /* typography architecture — two weights max: 400 (regular) and 700 (bold) */
     .container {
-      max-width: 900px;
+      max-width: 960px;
       width: 100%;
       margin: 0 auto;
     }
 
-    /* name — understated, confident */
+    /* Name: Libertinus Sans Bold — here Libre Baskerville Bold (serif, strong) */
     .name {
-      font-size: 2.75rem;
-      font-weight: 400;
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-weight: 700;            /* bold */
+      font-size: 3.5rem;
+      line-height: 1.1;
       letter-spacing: -0.02em;
-      color: #000000;
-      margin-bottom: 0.75rem;
-      line-height: 1.2;
+      color: #1C1C1C;              /* Black Ink */
+      margin-bottom: 0.5rem;
     }
 
-    /* positioning line — subtle, precise */
+    /* Positioning line — body regular, but we can use 500 for slight emphasis? no, keep 400. */
     .positioning {
-      font-size: 1.25rem;
-      font-weight: 320;
-      color: #4f4f4f;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: 1.4rem;
+      color: #1C1C1C;
       margin-bottom: 2rem;
-      border-bottom: 1px solid #e0e0e0;
-      padding-bottom: 1.25rem;
+      border-bottom: 1px solid #BEBEBE;  /* light gray, works in grayscale */
+      padding-bottom: 1.2rem;
+      max-width: 70%;
     }
 
-    /* paragraph — clear, measured */
-    .intro-paragraph {
-      font-size: 1.125rem;
-      color: #2b2b2b;
-      max-width: 620px;
+    /* short paragraph — body regular */
+    .intro {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: #1C1C1C;
+      max-width: 600px;
       margin-bottom: 3.5rem;
-      font-weight: 340;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    /* 3-section grid — clean, balanced */
+    /* 3 sections grid — titles use Deep Current accent (but grayscale test: they rely on structure) */
     .section-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -73,148 +86,139 @@
       margin-bottom: 4rem;
     }
 
-    .section {
-      border-top: 1px solid #d4d4d4;
-      padding-top: 1.2rem;
-    }
-
     .section-title {
-      font-size: 1rem;
-      font-weight: 500;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;            /* regular, not bold — only two weights: name bold, rest regular + accent */
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: #7a7a7a;
+      letter-spacing: 0.06em;
+      font-size: 0.9rem;
+      color: #006B6B;              /* Deep Current — accent for section titles and links */
       margin-bottom: 1.2rem;
+      border-bottom: 1px solid #C5C5C5;
+      padding-bottom: 0.5rem;
     }
 
-    .section-content {
+    /* list items — body regular */
+    .section-list {
       list-style: none;
     }
 
-    .section-content li {
+    .section-list li {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
       font-size: 1rem;
-      color: #2c2c2c;
-      margin-bottom: 0.7rem;
-      font-weight: 360;
+      color: #1C1C1C;
+      margin-bottom: 0.8rem;
       line-height: 1.5;
       display: flex;
       align-items: baseline;
     }
 
-    /* subtle indicator — quiet, not graphic */
-    .section-content li::before {
+    /* subtle bullet — pure structural mark, no color */
+    .section-list li::before {
       content: "—";
-      color: #c9c9c9;
+      color: #9E9E9E;              /* gray, works in grayscale */
       font-weight: 300;
-      margin-right: 0.6rem;
-      font-size: 0.9rem;
+      margin-right: 0.7rem;
     }
 
-    /* contact — single, unmistakable, elegant */
-    .contact-method {
+    /* contact method — one clear link, accent */
+    .contact-link {
       display: inline-block;
-      background-color: #f5f5f5;
-      border-radius: 40px;
-      padding: 0.8rem 2rem 0.8rem 2rem;
-      color: #1e1e1e;
-      font-size: 1.125rem;
-      font-weight: 380;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: 1.3rem;
+      color: #006B6B;              /* Deep Current */
       text-decoration: none;
-      border: 1px solid #eaeaea;
-      transition: all 0.2s ease;
-      letter-spacing: -0.01em;
+      border-bottom: 1px solid #B0B0B0;
+      padding-bottom: 0.2rem;
+      transition: border-color 0.15s ease;
       margin-bottom: 3rem;
+      word-break: break-all;
     }
 
-    .contact-method:hover {
-      background-color: #000000;
-      color: #ffffff;
-      border-color: #000000;
+    .contact-link:hover {
+      border-bottom-color: #1C1C1C;
     }
 
-    /* soft footnote — barely there */
+    /* footnote — quiet, regular */
     .footnote {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
       font-size: 0.85rem;
-      color: #aaaaaa;
-      margin-top: 2rem;
-      border-top: 1px solid #f0f0f0;
+      color: #5A5A5A;              /* dark gray, legible in grayscale */
+      border-top: 1px solid #C0C0C0;
       padding-top: 1.5rem;
-      font-weight: 330;
+      margin-top: 1.5rem;
     }
 
-    /* absolutely minimalist — no ornaments, no heavy graphics */
-    hr {
-      display: none;
-    }
+    /* GRAYSCALE TEST: if you temporarily set all colors to black/gray/white, structure remains.
+       The palette already respects that: Pale Ash bg, Black Ink text, Deep Current becomes a mid-tone in grayscale.
+       But we ensure no dependency on color for layout.
+    */
 
-    /* responsive — precise break */
+    /* responsive */
     @media (max-width: 700px) {
-      body { padding: 1.5rem; }
-      .name { font-size: 2.25rem; }
-      .section-grid {
-        grid-template-columns: 1fr;
-        gap: 1.8rem;
-      }
-      .contact-method {
-        padding: 0.7rem 1.5rem;
-        font-size: 1rem;
-      }
+      .name { font-size: 2.5rem; }
+      .positioning { font-size: 1.2rem; max-width: 100%; }
+      .section-grid { grid-template-columns: 1fr; gap: 1.8rem; }
     }
 
-    /* font import — only inter, clean */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    /* optional grayscale simulation (for design check) — just uncomment to test 
+    body { filter: grayscale(100%); } */
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- name — minimal, confident -->
-    <div class="name">Ariane Laurent</div>
+    <!-- NAME — Libertinus Sans Bold (simulated with Libre Baskerville Bold) -->
+    <div class="name">Mila Ryder</div>
 
-    <!-- positioning line — understated, informative -->
-    <div class="positioning">design & research — interaction, archives, subtle systems</div>
+    <!-- POSITIONING LINE — body regular, no extra weight -->
+    <div class="positioning">systems thinking ·  designing for adaptation</div>
 
-    <!-- short paragraph: who + what exploring/building -->
-    <div class="intro-paragraph">
-      I am a designer and researcher exploring the poetics of digital archives, 
-      slow interfaces, and how minimal structures can hold complex narratives. 
-      Currently building <em>understory</em> — a small library for non‑linear web writing.
+    <!-- SHORT PARAGRAPH — who + what exploring/building -->
+    <div class="intro">
+      I work at the intersection of cybernetics and interface design, exploring how feedback loops can shape resilient digital systems. Currently building <em>loop.tools</em> — a minimal framework for systemic prototyping.
     </div>
 
-    <!-- 3 sections exactly: Projects / Interests / Contact (contact as a section but the clear method is outside — that’s the design) -->
+    <!-- 3 SECTIONS: Projects / Interests / Contact (titles with Deep Current accent) -->
     <div class="section-grid">
-      <!-- projects -->
+      <!-- Projects -->
       <div class="section">
         <div class="section-title">Projects</div>
-        <ul class="section-content">
-          <li>Understory (web writing tool)</li>
-          <li>Fragments of a city (digital archive)</li>
-          <li>Typeface: Laurent Grotesk</li>
+        <ul class="section-list">
+          <li>loop.tools (systemic prototyping)</li>
+          <li>Field guide to feedback</li>
+          <li>Resilience archive / 2026</li>
         </ul>
       </div>
-      <!-- interests -->
+      <!-- Interests -->
       <div class="section">
         <div class="section-title">Interests</div>
-        <ul class="section-content">
-          <li>digital preservation / memory</li>
-          <li>generative text / constrained writing</li>
-          <li>light, atmosphere, silence</li>
+        <ul class="section-list">
+          <li>cybernetics / second‑order</li>
+          <li>generative modelling</li>
+          <li>ecological interfaces</li>
         </ul>
       </div>
-      <!-- contact section — minimal reference, but the one clear method is below -->
+      <!-- Contact (section) — still part of 3, but main method separate -->
       <div class="section">
         <div class="section-title">Contact</div>
-        <ul class="section-content">
-          <li>direct email →</li>
-          <li>open for residency conversations</li>
+        <ul class="section-list">
+          <li>prefer email →</li>
+          <li>open for research collab</li>
         </ul>
       </div>
     </div>
 
-    <!-- ONE CLEAR CONTACT METHOD — unmistakable, elegant, minimal -->
-    <a href="mailto:ariane@understory.cc" class="contact-method">ariane@understory.cc</a>
+    <!-- ONE CLEAR CONTACT METHOD — Deep Current link, but structure holds in grayscale -->
+    <a href="mailto:mila@loop.tools" class="contact-link">mila@loop.tools</a>
 
-    <!-- small footnote — just for balance, professional tone -->
-    <div class="footnote">based between paris and brussels — 2026</div>
+    <!-- small footnote — architecture detail -->
+    <div class="footnote">Amsterdam / Brussels — 2026</div>
   </div>
+
+  <!-- design note: all colors follow spec. grayscale test: remove comment below to see structure only -->
+  <!-- <div style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.02); pointer-events:none;"></div> -->
 </body>
 </html>
