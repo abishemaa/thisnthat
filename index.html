@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elena Voss · minimal design</title>
+  <title>ariane laurent · understory</title>
   <style>
-    /* ---------- RESET & BASE ---------- */
+    /* ---------- RESET & BASE — pure, airy, professional ---------- */
     * {
       margin: 0;
       padding: 0;
@@ -13,280 +13,208 @@
     }
 
     body {
-      background-color: #faf9f6;   /* warm off-white */
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      color: #1e1e2f;
-      line-height: 1.6;
-      padding: 2rem 1.5rem;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* main card – breathing white space */
-    .container {
-      max-width: 800px;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(2px);
-      border-radius: 32px;
-      padding: 3rem 2.5rem;
-      box-shadow: 
-        0 12px 30px rgba(0, 0, 0, 0.03),
-        0 4px 8px rgba(0, 0, 0, 0.02);
-      border: 1px solid rgba(230, 230, 240, 0.5);
-    }
-
-    /* ---------- TYPOGRAPHY WITH CHARACTER ---------- */
-    h1 {
-      font-size: 4rem;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 0.3rem;
-      color: #12121c;
-    }
-
-    .positioning {
-      font-size: 1.5rem;
-      font-weight: 320;
-      color: #4a4a5a;
-      margin-bottom: 1.8rem;
-      border-left: 3px solid #bbb8d2;
-      padding-left: 1.2rem;
-    }
-
-    .paragraph {
-      font-size: 1.2rem;
-      color: #2d2d3a;
-      margin-bottom: 3rem;
-      max-width: 580px;
+      background-color: #ffffff;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1e1e1e;
+      line-height: 1.5;
       font-weight: 350;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
     }
 
-    /* three section grid — minimal but structured */
+    /* structure — generous white space, refined scale */
+    .container {
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* name — understated, confident */
+    .name {
+      font-size: 2.75rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #000000;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    /* positioning line — subtle, precise */
+    .positioning {
+      font-size: 1.25rem;
+      font-weight: 320;
+      color: #4f4f4f;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 1.25rem;
+    }
+
+    /* paragraph — clear, measured */
+    .intro-paragraph {
+      font-size: 1.125rem;
+      color: #2b2b2b;
+      max-width: 620px;
+      margin-bottom: 3.5rem;
+      font-weight: 340;
+      line-height: 1.6;
+    }
+
+    /* 3-section grid — clean, balanced */
     .section-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.8rem;
-      margin: 2.5rem 0 3rem 0;
+      gap: 2.5rem;
+      margin-bottom: 4rem;
     }
 
-    .section-card {
-      background: #ffffffd6;
-      backdrop-filter: blur(4px);
-      border-radius: 24px;
-      padding: 1.6rem 1.2rem;
-      border: 1px solid #eaeaf0;
-      transition: all 0.15s ease;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-    }
-
-    .section-card:hover {
-      border-color: #cdcadf;
-      background: #ffffff;
-      box-shadow: 0 15px 25px -12px rgba(80, 70, 120, 0.12);
+    .section {
+      border-top: 1px solid #d4d4d4;
+      padding-top: 1.2rem;
     }
 
     .section-title {
-      font-size: 1.3rem;
-      font-weight: 470;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: #1f1f2e;
+      font-size: 1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #7a7a7a;
+      margin-bottom: 1.2rem;
     }
 
-    .section-title span {
-      font-size: 1.6rem;
-      font-weight: 300;
-      color: #7f7aa3;
-      margin-right: 0.2rem;
-    }
-
-    /* list styling – clean, no big dots */
-    .section-card ul {
+    .section-content {
       list-style: none;
     }
 
-    .section-card li {
+    .section-content li {
+      font-size: 1rem;
+      color: #2c2c2c;
       margin-bottom: 0.7rem;
-      font-weight: 340;
-      font-size: 1.02rem;
+      font-weight: 360;
+      line-height: 1.5;
       display: flex;
       align-items: baseline;
-      gap: 0.4rem;
-      color: #2f2f3f;
-      border-bottom: 1px dashed #e2e0ec;
-      padding-bottom: 0.6rem;
     }
 
-    .section-card li:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
+    /* subtle indicator — quiet, not graphic */
+    .section-content li::before {
+      content: "—";
+      color: #c9c9c9;
+      font-weight: 300;
+      margin-right: 0.6rem;
+      font-size: 0.9rem;
     }
 
-    .bullet {
+    /* contact — single, unmistakable, elegant */
+    .contact-method {
       display: inline-block;
-      width: 6px;
-      height: 6px;
-      background: #a29ec2;
-      border-radius: 1px;
-      margin-right: 0.5rem;
-      flex-shrink: 0;
-    }
-
-    /* contact — one clear method */
-    .contact-block {
-      margin-top: 1.8rem;
-      padding: 1.6rem 2rem;
-      background: #f0eff8;
-      border-radius: 48px;           /* rounded but not too soft */
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      border: 1px solid #dcd9e8;
-      transition: background 0.2s;
-    }
-
-    .contact-block:hover {
-      background: #e9e6f5;
-    }
-
-    .contact-label {
+      background-color: #f5f5f5;
+      border-radius: 40px;
+      padding: 0.8rem 2rem 0.8rem 2rem;
+      color: #1e1e1e;
+      font-size: 1.125rem;
       font-weight: 380;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      font-size: 0.9rem;
-      color: #4b4670;
-    }
-
-    .contact-email {
-      font-size: 1.4rem;
-      font-weight: 430;
-      color: #1a1825;
       text-decoration: none;
-      border-bottom: 2px solid #aba6cf;
-      padding-bottom: 0.2rem;
-      transition: border-color 0.15s;
-      word-break: break-all;
+      border: 1px solid #eaeaea;
+      transition: all 0.2s ease;
+      letter-spacing: -0.01em;
+      margin-bottom: 3rem;
     }
 
-    .contact-email:hover {
-      border-bottom-color: #4b3f7a;
-      color: #000;
+    .contact-method:hover {
+      background-color: #000000;
+      color: #ffffff;
+      border-color: #000000;
     }
 
-    /* small footer / extra design detail */
+    /* soft footnote — barely there */
     .footnote {
+      font-size: 0.85rem;
+      color: #aaaaaa;
       margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #8c89a2;
-      text-align: center;
-      border-top: 1px solid #e1deec;
+      border-top: 1px solid #f0f0f0;
       padding-top: 1.5rem;
+      font-weight: 330;
     }
 
-    /* ---------- ADAPTIVE & POLISH ---------- */
+    /* absolutely minimalist — no ornaments, no heavy graphics */
+    hr {
+      display: none;
+    }
+
+    /* responsive — precise break */
     @media (max-width: 700px) {
-      .container {
-        padding: 2rem 1.5rem;
-      }
-      h1 {
-        font-size: 3.2rem;
-      }
+      body { padding: 1.5rem; }
+      .name { font-size: 2.25rem; }
       .section-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 1.8rem;
       }
-      .contact-block {
-        flex-direction: column;
-        align-items: flex-start;
-        border-radius: 32px;
-      }
-      .contact-email {
-        font-size: 1.2rem;
+      .contact-method {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
       }
     }
 
-    /* optional very subtle decorative element */
-    .soft-dot {
-      background: radial-gradient(circle at 20% 30%, #f0ebf9, transparent 60%);
-      pointer-events: none;
-    }
+    /* font import — only inter, clean */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- NAME (clean, strong) -->
-    <h1>Elena Voss</h1>
-    
-    <!-- POSITIONING LINE (simple, curious) -->
-    <div class="positioning">
-      designer + researcher ·  &nbsp;building quiet tools
+    <!-- name — minimal, confident -->
+    <div class="name">Ariane Laurent</div>
+
+    <!-- positioning line — understated, informative -->
+    <div class="positioning">design & research — interaction, archives, subtle systems</div>
+
+    <!-- short paragraph: who + what exploring/building -->
+    <div class="intro-paragraph">
+      I am a designer and researcher exploring the poetics of digital archives, 
+      slow interfaces, and how minimal structures can hold complex narratives. 
+      Currently building <em>understory</em> — a small library for non‑linear web writing.
     </div>
 
-    <!-- SHORT PARAGRAPH (who + what exploring) -->
-    <div class="paragraph">
-      I’m a multidisciplinary designer exploring how slow interactions 
-      and generative systems can bring calm to everyday interfaces. 
-      Currently building small web experiments and a tactile font.
-    </div>
-
-    <!-- 3 SECTIONS: PROJECTS / INTERESTS / CONTACT (but contact is separate block — as requested “3 sections max / contact method clear”) 
-         we keep three distinct cards, and then a separate obvious contact area (one method)   -->
+    <!-- 3 sections exactly: Projects / Interests / Contact (contact as a section but the clear method is outside — that’s the design) -->
     <div class="section-grid">
-      <!-- PROJECTS -->
-      <div class="section-card">
-        <div class="section-title"><span>↳</span> Projects</div>
-        <ul>
-          <li><span class="bullet"></span> ▲  soft‑space (generative zine)</li>
-          <li><span class="bullet"></span> ●  type specimen: “Voss Mono”</li>
-          <li><span class="bullet"></span> ■  micro‑residencies archive</li>
+      <!-- projects -->
+      <div class="section">
+        <div class="section-title">Projects</div>
+        <ul class="section-content">
+          <li>Understory (web writing tool)</li>
+          <li>Fragments of a city (digital archive)</li>
+          <li>Typeface: Laurent Grotesk</li>
         </ul>
       </div>
-      <!-- INTERESTS -->
-      <div class="section-card">
-        <div class="section-title"><span>↳</span> Interests</div>
-        <ul>
-          <li><span class="bullet"></span> ︎︎︎typography / haptics</li>
-          <li><span class="bullet"></span> slow web / permacomputing</li>
-          <li><span class="bullet"></span> ambient music · field recording</li>
+      <!-- interests -->
+      <div class="section">
+        <div class="section-title">Interests</div>
+        <ul class="section-content">
+          <li>digital preservation / memory</li>
+          <li>generative text / constrained writing</li>
+          <li>light, atmosphere, silence</li>
         </ul>
       </div>
-      <!-- CONTACT – this is the third section, but we want “One clear contact method” below.
-           To satisfy both: I’ll keep contact *card* minimal, and then the main contact method underneath is big & unique. 
-           That way we have three sections (projects, interests, contact) + one obvious email block.
-      -->
-      <div class="section-card">
-        <div class="section-title"><span>↳</span> Contact</div>
-        <ul>
-          <li><span class="bullet"></span> open for collab · hello</li>
-          <li><span class="bullet"></span> prefer email →</li>
-          <li style="border-bottom: none; font-size: 0.9rem; opacity: 0.7;">(main method below)</li>
+      <!-- contact section — minimal reference, but the one clear method is below -->
+      <div class="section">
+        <div class="section-title">Contact</div>
+        <ul class="section-content">
+          <li>direct email →</li>
+          <li>open for residency conversations</li>
         </ul>
       </div>
     </div>
 
-    <!-- ONE CLEAR CONTACT METHOD (big, obvious) -->
-    <div class="contact-block">
-      <span class="contact-label">one direct method</span>
-      <a href="mailto:e.voss@read.cv" class="contact-email">e.voss@read.cv</a>
-    </div>
-    
-    <!-- tiny footnote – just for balance -->
-    <div class="footnote">
-      <span>✺  based in berlin / remote  ✺</span>
-    </div>
+    <!-- ONE CLEAR CONTACT METHOD — unmistakable, elegant, minimal -->
+    <a href="mailto:ariane@understory.cc" class="contact-method">ariane@understory.cc</a>
+
+    <!-- small footnote — just for balance, professional tone -->
+    <div class="footnote">based between paris and brussels — 2026</div>
   </div>
-
-  <!-- subtle grain / texture (design detail) -->
-  <div style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; opacity:0.02; background: repeating-linear-gradient(45deg, #a899c0 0px, #a899c0 2px, transparent 2px, transparent 12px); z-index: -1;"></div>
 </body>
 </html>
