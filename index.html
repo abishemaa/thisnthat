@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elena Voss · minimal design</title>
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #faf9f6;   /* warm off-white */
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e1e2f;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* main card – breathing white space */
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(2px);
+      border-radius: 32px;
+      padding: 3rem 2.5rem;
+      box-shadow: 
+        0 12px 30px rgba(0, 0, 0, 0.03),
+        0 4px 8px rgba(0, 0, 0, 0.02);
+      border: 1px solid rgba(230, 230, 240, 0.5);
+    }
+
+    /* ---------- TYPOGRAPHY WITH CHARACTER ---------- */
+    h1 {
+      font-size: 4rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.3rem;
+      color: #12121c;
+    }
+
+    .positioning {
+      font-size: 1.5rem;
+      font-weight: 320;
+      color: #4a4a5a;
+      margin-bottom: 1.8rem;
+      border-left: 3px solid #bbb8d2;
+      padding-left: 1.2rem;
+    }
+
+    .paragraph {
+      font-size: 1.2rem;
+      color: #2d2d3a;
+      margin-bottom: 3rem;
+      max-width: 580px;
+      font-weight: 350;
+    }
+
+    /* three section grid — minimal but structured */
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin: 2.5rem 0 3rem 0;
+    }
+
+    .section-card {
+      background: #ffffffd6;
+      backdrop-filter: blur(4px);
+      border-radius: 24px;
+      padding: 1.6rem 1.2rem;
+      border: 1px solid #eaeaf0;
+      transition: all 0.15s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    }
+
+    .section-card:hover {
+      border-color: #cdcadf;
+      background: #ffffff;
+      box-shadow: 0 15px 25px -12px rgba(80, 70, 120, 0.12);
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 470;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #1f1f2e;
+    }
+
+    .section-title span {
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: #7f7aa3;
+      margin-right: 0.2rem;
+    }
+
+    /* list styling – clean, no big dots */
+    .section-card ul {
+      list-style: none;
+    }
+
+    .section-card li {
+      margin-bottom: 0.7rem;
+      font-weight: 340;
+      font-size: 1.02rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      color: #2f2f3f;
+      border-bottom: 1px dashed #e2e0ec;
+      padding-bottom: 0.6rem;
+    }
+
+    .section-card li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .bullet {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #a29ec2;
+      border-radius: 1px;
+      margin-right: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    /* contact — one clear method */
+    .contact-block {
+      margin-top: 1.8rem;
+      padding: 1.6rem 2rem;
+      background: #f0eff8;
+      border-radius: 48px;           /* rounded but not too soft */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      border: 1px solid #dcd9e8;
+      transition: background 0.2s;
+    }
+
+    .contact-block:hover {
+      background: #e9e6f5;
+    }
+
+    .contact-label {
+      font-weight: 380;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.9rem;
+      color: #4b4670;
+    }
+
+    .contact-email {
+      font-size: 1.4rem;
+      font-weight: 430;
+      color: #1a1825;
+      text-decoration: none;
+      border-bottom: 2px solid #aba6cf;
+      padding-bottom: 0.2rem;
+      transition: border-color 0.15s;
+      word-break: break-all;
+    }
+
+    .contact-email:hover {
+      border-bottom-color: #4b3f7a;
+      color: #000;
+    }
+
+    /* small footer / extra design detail */
+    .footnote {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #8c89a2;
+      text-align: center;
+      border-top: 1px solid #e1deec;
+      padding-top: 1.5rem;
+    }
+
+    /* ---------- ADAPTIVE & POLISH ---------- */
+    @media (max-width: 700px) {
+      .container {
+        padding: 2rem 1.5rem;
+      }
+      h1 {
+        font-size: 3.2rem;
+      }
+      .section-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .contact-block {
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 32px;
+      }
+      .contact-email {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* optional very subtle decorative element */
+    .soft-dot {
+      background: radial-gradient(circle at 20% 30%, #f0ebf9, transparent 60%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- NAME (clean, strong) -->
+    <h1>Elena Voss</h1>
+    
+    <!-- POSITIONING LINE (simple, curious) -->
+    <div class="positioning">
+      designer + researcher ·  &nbsp;building quiet tools
+    </div>
+
+    <!-- SHORT PARAGRAPH (who + what exploring) -->
+    <div class="paragraph">
+      I’m a multidisciplinary designer exploring how slow interactions 
+      and generative systems can bring calm to everyday interfaces. 
+      Currently building small web experiments and a tactile font.
+    </div>
+
+    <!-- 3 SECTIONS: PROJECTS / INTERESTS / CONTACT (but contact is separate block — as requested “3 sections max / contact method clear”) 
+         we keep three distinct cards, and then a separate obvious contact area (one method)   -->
+    <div class="section-grid">
+      <!-- PROJECTS -->
+      <div class="section-card">
+        <div class="section-title"><span>↳</span> Projects</div>
+        <ul>
+          <li><span class="bullet"></span> ▲  soft‑space (generative zine)</li>
+          <li><span class="bullet"></span> ●  type specimen: “Voss Mono”</li>
+          <li><span class="bullet"></span> ■  micro‑residencies archive</li>
+        </ul>
+      </div>
+      <!-- INTERESTS -->
+      <div class="section-card">
+        <div class="section-title"><span>↳</span> Interests</div>
+        <ul>
+          <li><span class="bullet"></span> ︎︎︎typography / haptics</li>
+          <li><span class="bullet"></span> slow web / permacomputing</li>
+          <li><span class="bullet"></span> ambient music · field recording</li>
+        </ul>
+      </div>
+      <!-- CONTACT – this is the third section, but we want “One clear contact method” below.
+           To satisfy both: I’ll keep contact *card* minimal, and then the main contact method underneath is big & unique. 
+           That way we have three sections (projects, interests, contact) + one obvious email block.
+      -->
+      <div class="section-card">
+        <div class="section-title"><span>↳</span> Contact</div>
+        <ul>
+          <li><span class="bullet"></span> open for collab · hello</li>
+          <li><span class="bullet"></span> prefer email →</li>
+          <li style="border-bottom: none; font-size: 0.9rem; opacity: 0.7;">(main method below)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ONE CLEAR CONTACT METHOD (big, obvious) -->
+    <div class="contact-block">
+      <span class="contact-label">one direct method</span>
+      <a href="mailto:e.voss@read.cv" class="contact-email">e.voss@read.cv</a>
+    </div>
+    
+    <!-- tiny footnote – just for balance -->
+    <div class="footnote">
+      <span>✺  based in berlin / remote  ✺</span>
+    </div>
+  </div>
+
+  <!-- subtle grain / texture (design detail) -->
+  <div style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; opacity:0.02; background: repeating-linear-gradient(45deg, #a899c0 0px, #a899c0 2px, transparent 2px, transparent 12px); z-index: -1;"></div>
+</body>
+</html>
