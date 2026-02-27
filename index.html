@@ -3,18 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mila ryder · systems thinking</title>
+  <title>a267 · healthcare × systems × technology</title>
+
   <style>
-    /* ---------- FONTS: Libertinus Sans Bold (name) + Corsa Grotesk (fallback Raleway) ---------- */
-    /* Libertinus Sans – fallback to system serif if not loaded, but we simulate via stack */
-    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@400;500&display=swap');
-    /* Libertinus Sans is not widely available — we use Libre Baskerville as a stand-in (bold weights) but maintain the spirit.
-       For absolute correctness: we treat Libertinus Sans Bold as a serif with gravity.
-       For body: Raleway Regular (400) as specified. Corsa Grotesk is proprietary, but Raleway is similar geometric sans.
-       This respects the brief: Libertinus Sans Bold (here Libre Baskerville Bold) + Raleway Regular.
-    */
-    
-    /* ---------- RESET — grayscale first, structure only ---------- */
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Raleway:wght@400&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -22,14 +15,11 @@
     }
 
     body {
-      background-color: #E5E5E5;  /* Pale Ash */
-      color: #1C1C1C;             /* Black Ink */
-      font-family: 'Raleway', 'Helvetica Neue', sans-serif;
-      font-weight: 400;           /* Raleway Regular */
-      font-size: 1rem;
+      background-color: #E5E5E5; /* Pale Ash */
+      color: #1C1C1C;            /* Black Ink */
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -37,103 +27,75 @@
       padding: 2rem;
     }
 
-    /* typography architecture — two weights max: 400 (regular) and 700 (bold) */
     .container {
-      max-width: 960px;
+      max-width: 900px;
       width: 100%;
-      margin: 0 auto;
     }
 
-    /* Name: Libertinus Sans Bold — here Libre Baskerville Bold (serif, strong) */
     .name {
-      font-family: 'Libre Baskerville', Georgia, serif;
-      font-weight: 700;            /* bold */
-      font-size: 3.5rem;
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 700;
+      font-size: 3.2rem;
       line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: #1C1C1C;              /* Black Ink */
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
     }
 
-    /* Positioning line — body regular, but we can use 500 for slight emphasis? no, keep 400. */
     .positioning {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 400;
-      font-size: 1.4rem;
-      color: #1C1C1C;
-      margin-bottom: 2rem;
-      border-bottom: 1px solid #BEBEBE;  /* light gray, works in grayscale */
-      padding-bottom: 1.2rem;
-      max-width: 70%;
+      font-size: 1.3rem;
+      border-bottom: 1px solid #C5C5C5;
+      padding-bottom: 1rem;
+      margin-bottom: 2.2rem;
+      max-width: 75%;
     }
 
-    /* short paragraph — body regular */
     .intro {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 400;
-      font-size: 1.1rem;
-      color: #1C1C1C;
-      max-width: 600px;
-      margin-bottom: 3.5rem;
+      font-size: 1.05rem;
+      max-width: 620px;
+      margin-bottom: 3rem;
       line-height: 1.7;
     }
 
-    /* 3 sections grid — titles use Deep Current accent (but grayscale test: they rely on structure) */
     .section-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2.5rem;
-      margin-bottom: 4rem;
+      margin-bottom: 3.5rem;
     }
 
     .section-title {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 400;            /* regular, not bold — only two weights: name bold, rest regular + accent */
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-size: 0.9rem;
-      color: #006B6B;              /* Deep Current — accent for section titles and links */
-      margin-bottom: 1.2rem;
-      border-bottom: 1px solid #C5C5C5;
-      padding-bottom: 0.5rem;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      color: #024059; /* Deep Current */
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #D0D0D0;
+      padding-bottom: 0.4rem;
     }
 
-    /* list items — body regular */
     .section-list {
       list-style: none;
     }
 
     .section-list li {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 400;
-      font-size: 1rem;
-      color: #1C1C1C;
       margin-bottom: 0.8rem;
-      line-height: 1.5;
       display: flex;
       align-items: baseline;
     }
 
-    /* subtle bullet — pure structural mark, no color */
     .section-list li::before {
       content: "—";
-      color: #9E9E9E;              /* gray, works in grayscale */
-      font-weight: 300;
-      margin-right: 0.7rem;
+      color: #9E9E9E;
+      margin-right: 0.6rem;
     }
 
-    /* contact method — one clear link, accent */
     .contact-link {
       display: inline-block;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 400;
-      font-size: 1.3rem;
-      color: #006B6B;              /* Deep Current */
+      font-size: 1.2rem;
+      color: #024059;
       text-decoration: none;
       border-bottom: 1px solid #B0B0B0;
       padding-bottom: 0.2rem;
-      transition: border-color 0.15s ease;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
       word-break: break-all;
     }
 
@@ -141,84 +103,75 @@
       border-bottom-color: #1C1C1C;
     }
 
-    /* footnote — quiet, regular */
     .footnote {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 400;
       font-size: 0.85rem;
-      color: #5A5A5A;              /* dark gray, legible in grayscale */
-      border-top: 1px solid #C0C0C0;
-      padding-top: 1.5rem;
+      color: #5A5A5A;
+      border-top: 1px solid #C5C5C5;
+      padding-top: 1.2rem;
       margin-top: 1.5rem;
     }
 
-    /* GRAYSCALE TEST: if you temporarily set all colors to black/gray/white, structure remains.
-       The palette already respects that: Pale Ash bg, Black Ink text, Deep Current becomes a mid-tone in grayscale.
-       But we ensure no dependency on color for layout.
-    */
-
-    /* responsive */
     @media (max-width: 700px) {
-      .name { font-size: 2.5rem; }
-      .positioning { font-size: 1.2rem; max-width: 100%; }
-      .section-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+      .name { font-size: 2.3rem; }
+      .positioning { max-width: 100%; font-size: 1.1rem; }
+      .section-grid { grid-template-columns: 1fr; gap: 1.6rem; }
     }
-
-    /* optional grayscale simulation (for design check) — just uncomment to test 
-    body { filter: grayscale(100%); } */
   </style>
 </head>
+
 <body>
   <div class="container">
-    <!-- NAME — Libertinus Sans Bold (simulated with Libre Baskerville Bold) -->
-    <div class="name">Mila Ryder</div>
 
-    <!-- POSITIONING LINE — body regular, no extra weight -->
-    <div class="positioning">systems thinking ·  designing for adaptation</div>
+    <div class="name">a267</div>
 
-    <!-- SHORT PARAGRAPH — who + what exploring/building -->
-    <div class="intro">
-      I work at the intersection of cybernetics and interface design, exploring how feedback loops can shape resilient digital systems. Currently building <em>loop.tools</em> — a minimal framework for systemic prototyping.
+    <div class="positioning">
+      healthcare × systems × technology
     </div>
 
-    <!-- 3 SECTIONS: Projects / Interests / Contact (titles with Deep Current accent) -->
+    <div class="intro">
+      I build small, structured systems at the intersection of healthcare and technology.
+      My focus is on practical tools, automation, and scalable thinking — turning complexity into usable architecture.
+    </div>
+
     <div class="section-grid">
-      <!-- Projects -->
+
       <div class="section">
         <div class="section-title">Projects</div>
         <ul class="section-list">
-          <li>loop.tools (systemic prototyping)</li>
-          <li>Field guide to feedback</li>
-          <li>Resilience archive / 2026</li>
+          <li>Personal knowledge system (health + tech)</li>
+          <li>CMS dashboard (PHP-based build)</li>
+          <li>Automation experiments / workflows</li>
         </ul>
       </div>
-      <!-- Interests -->
+
       <div class="section">
-        <div class="section-title">Interests</div>
+        <div class="section-title">Exploring</div>
         <ul class="section-list">
-          <li>cybernetics / second‑order</li>
-          <li>generative modelling</li>
-          <li>ecological interfaces</li>
+          <li>embedded systems (software-first)</li>
+          <li>prompt engineering & AI workflows</li>
+          <li>healthcare system design</li>
         </ul>
       </div>
-      <!-- Contact (section) — still part of 3, but main method separate -->
+
       <div class="section">
-        <div class="section-title">Contact</div>
+        <div class="section-title">Direction</div>
         <ul class="section-list">
-          <li>prefer email →</li>
-          <li>open for research collab</li>
+          <li>designing usable technical systems</li>
+          <li>bridging medicine and computation</li>
+          <li>long-term venture building</li>
         </ul>
       </div>
+
     </div>
 
-    <!-- ONE CLEAR CONTACT METHOD — Deep Current link, but structure holds in grayscale -->
-    <a href="mailto:mila@loop.tools" class="contact-link">mila@loop.tools</a>
+    <a href="mailto:your@email.com" class="contact-link">
+      your@email.com
+    </a>
 
-    <!-- small footnote — architecture detail -->
-    <div class="footnote">Amsterdam / Brussels — 2026</div>
+    <div class="footnote">
+      India · 2026
+    </div>
+
   </div>
-
-  <!-- design note: all colors follow spec. grayscale test: remove comment below to see structure only -->
-  <!-- <div style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.02); pointer-events:none;"></div> -->
 </body>
 </html>
