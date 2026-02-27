@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>a267 · systems</title>
 
-  <!-- Inter 700 (name) + Raleway 400/500 (body) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Libertinus Sans Bold (name) + Raleway Regular (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Libertinus Sans is not standard on Google Fonts, Libre Baskerville is a suitable serif alternative with similar gravity. -->
 
   <style>
+    /* ---------- ROOT VARIABLES — exact specified colors ---------- */
     :root {
-      --bg-main: #E5E5E5;
-      --text-main: #1C1C1C;
-      --accent: #024059;
+      --bg-main: #E5E5E5;      /* Pale Ash */
+      --text-main: #1C1C1C;    /* Black Ink */
+      --accent: #024059;       /* Deep Current */
       --border-light: #CECECE;
-      --gray-mid: #8A8A8A;
     }
 
     * {
@@ -25,7 +26,7 @@
 
     body {
       font-family: 'Raleway', 'Helvetica Neue', sans-serif;
-      font-weight: 400;
+      font-weight: 400;                /* regular, primary body weight */
       background-color: var(--bg-main);
       color: var(--text-main);
       line-height: 1.6;
@@ -33,71 +34,67 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* 8px rhythm system */
+    /* typography — two weights only: 400 (regular) and 700 (bold name) */
     .container {
-      max-width: 960px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 40px 32px 48px;
+      padding: 2rem 2rem 3rem;
     }
 
-    /* HERO */
+    /* ----- HERO SECTION — integrated, no full-screen split ----- */
     .hero {
-      padding: 48px 0 24px;
+      padding: 4rem 0 2rem 0;
       border-bottom: 1px solid var(--border-light);
     }
 
-    .name {
-      font-family: 'Inter', sans-serif;
+    .hero h1 {
+      font-family: 'Libre Baskerville', Georgia, serif;  /* stands in for Libertinus Sans Bold */
       font-weight: 700;
-      font-size: clamp(3.8rem, 9vw, 5.5rem);
+      font-size: clamp(3.5rem, 10vw, 5.5rem);
       letter-spacing: -0.02em;
-      line-height: 1;
-      position: relative;
-      display: inline-block;
-      margin-bottom: 16px;
+      color: var(--text-main);
+      line-height: 1.1;
+      margin-bottom: 0.6rem;
     }
 
-    .name::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 96px;
-      height: 2px;
-      background-color: var(--accent);
+    .hero .positioning {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      color: var(--text-main);
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
     }
 
-    .positioning {
-      font-weight: 500;
-      font-size: 1.25rem;
-      opacity: 0.75;
-      margin: 24px 0 16px;
-      letter-spacing: -0.01em;
-    }
-
-    .intro {
-      font-size: 1.15rem;
-      max-width: 600px;
+    .hero .intro {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: 1.2rem;
+      max-width: 650px;
+      color: var(--text-main);
+      margin: 1.8rem 0 2.2rem 0;
       line-height: 1.7;
-      margin: 16px 0 32px;
+      opacity: 0.9;
     }
 
-    /* SECTIONS */
+    /* ----- 3 SECTIONS GRID (Projects / Interests / Contact) ----- */
     .section-grid {
       display: grid;
-      grid-template-columns: 1.3fr 1fr 0.9fr;
-      gap: 40px;
-      margin: 56px 0 40px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin: 4rem 0 4rem 0;
     }
 
     .section-title {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;                 /* regular, not bold */
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      font-size: 0.85rem;
-      color: var(--accent);
-      margin-bottom: 16px;
+      font-size: 0.9rem;
+      color: var(--accent);              /* Deep Current for section titles */
+      margin-bottom: 1.4rem;
       border-bottom: 1px solid var(--border-light);
-      padding-bottom: 8px;
+      padding-bottom: 0.5rem;
     }
 
     .section-list {
@@ -105,8 +102,11 @@
     }
 
     .section-list li {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
       font-size: 1rem;
-      margin-bottom: 12px;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
       display: flex;
       align-items: baseline;
       line-height: 1.5;
@@ -114,129 +114,111 @@
 
     .section-list li::before {
       content: "—";
-      color: var(--gray-mid);
-      margin-right: 10px;
+      color: #AAAAAA;                    /* neutral gray, works in grayscale */
+      font-weight: 300;
+      margin-right: 0.7rem;
     }
 
-    /* artifact integrated */
-    .artifact {
-      margin-top: 8px;
-      margin-left: 20px;
-      font-size: 0.95rem;
-      color: var(--gray-mid);
-    }
-
-    .artifact a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid var(--border-light);
-      padding-bottom: 2px;
-      transition: all 120ms ease;
-    }
-
-    .artifact a:hover {
-      border-bottom-color: var(--accent);
-      opacity: 0.85;
-    }
-
-    /* CONTACT */
+    /* ----- ONE CLEAR CONTACT METHOD (Deep Current accent) ----- */
     .contact-block {
-      margin: 40px 0 32px;
-      padding-top: 24px;
+      margin: 3rem 0 3rem 0;
+      padding: 1.5rem 0 0.5rem 0;
       border-top: 1px solid var(--border-light);
     }
 
     .contact-email {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
       font-size: 1.6rem;
       color: var(--accent);
       text-decoration: none;
       border-bottom: 1px solid transparent;
-      transition: all 120ms ease;
+      transition: border-color 0.2s ease;
+      word-break: break-all;
       display: inline-block;
+      margin-top: 0.5rem;
     }
 
     .contact-email:hover {
       border-bottom-color: var(--text-main);
-      opacity: 0.85;
     }
 
+    /* footnote — quiet, minimal */
     .footnote {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
       font-size: 0.85rem;
       color: #5C5C5C;
       border-top: 1px solid var(--border-light);
-      padding-top: 24px;
-      margin-top: 32px;
+      padding-top: 2rem;
+      margin-top: 2rem;
     }
 
     /* responsive */
     @media (max-width: 700px) {
-      .container { padding: 32px 20px 40px; }
-      .section-grid { grid-template-columns: 1fr; gap: 32px; }
-      .name { font-size: 3.2rem; }
-      .positioning { font-size: 1.1rem; }
-      .intro { font-size: 1.05rem; }
+      .container { padding: 1.5rem; }
+      .hero h1 { font-size: 3.2rem; }
+      .hero .positioning { font-size: 1.2rem; }
+      .section-grid { grid-template-columns: 1fr; gap: 2rem; }
       .contact-email { font-size: 1.3rem; }
     }
+
+    /* grayscale test: uncomment to verify structure 
+    body { filter: grayscale(100%); } */
   </style>
 </head>
-
 <body>
   <div class="container">
-
+    <!-- HERO: name + positioning line + short paragraph (all integrated) -->
     <div class="hero">
-      <h1 class="name">a267</h1>
-      <div class="positioning">building systems / exploring edges</div>
+      <h1>a267</h1>
+      <div class="positioning">building systems · exploring edges</div>
       <div class="intro">
-        I build tools for feedback loops and adaptive structures.
-        Currently developing an open-source, browser-based toolkit for systemic prototyping — modular, live, and minimal.
+        I’m a systems thinker and designer exploring feedback loops, 
+        adaptive structures, and the poetics of digital infrastructure. 
+        Currently building a toolkit for systemic prototyping.
       </div>
     </div>
 
+    <!-- 3 SECTIONS: Projects / Interests / Contact (as requested) -->
     <div class="section-grid">
-
+      <!-- Projects -->
       <div>
         <div class="section-title">Projects</div>
         <ul class="section-list">
-          <li>
-            loop.tools (alpha) — open-source
-            <div class="artifact">
-              → <a href="#">demo v0.1</a> (live, bare, working)
-            </div>
-          </li>
-          <li>field guide to feedback (2026)</li>
-          <li>resilience archive / v0.1</li>
+          <li>loop.tools (systemic prototyping)</li>
+          <li>Field guide to feedback</li>
+          <li>Resilience archive / 2026</li>
         </ul>
       </div>
-
+      <!-- Interests -->
       <div>
         <div class="section-title">Interests</div>
         <ul class="section-list">
-          <li>cybernetics / second-order</li>
+          <li>cybernetics / second‑order</li>
           <li>generative modelling</li>
           <li>ecological interfaces</li>
         </ul>
       </div>
-
+      <!-- Contact section (part of the 3) -->
       <div>
         <div class="section-title">Contact</div>
         <ul class="section-list">
-          <li>direct email →</li>
-          <li>research / collaboration</li>
+          <li>prefer email →</li>
+          <li>open for research collab</li>
         </ul>
       </div>
-
     </div>
 
+    <!-- ONE CLEAR CONTACT METHOD (separate, unmistakable) -->
     <div class="contact-block">
-      <a href="mailto:a267@system.space" class="contact-email">
-        a267@system.space
-      </a>
+      <a href="mailto:a267@system.space" class="contact-email">a267@system.space</a>
     </div>
 
+    <!-- small footnote (balance) -->
     <div class="footnote">
-      Amsterdam / Brussels — 2026
+      Amsterdam / brussels — 2026
     </div>
-
   </div>
 </body>
 </html>
